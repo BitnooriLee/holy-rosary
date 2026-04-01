@@ -44,7 +44,7 @@ function RosaryApp() {
      *   ③ card    — shrink-0, 34vh 고정 (묵주 크기 불변 보장)
      *   ④ footer  — shrink-0, 극소 네비게이션
      */
-    <div className="relative flex flex-col h-screen overflow-hidden">
+    <div className="rosary-app-root relative flex flex-col h-screen">
 
       {/* ── 배경 ── */}
       <div

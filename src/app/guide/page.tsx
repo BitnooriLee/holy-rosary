@@ -250,21 +250,25 @@ export default function GuidePage() {
         >
           <p style={{ fontWeight: 700, color: '#0b3d2e', marginBottom: '0.75rem', fontSize: '0.9rem' }}>📋 목차</p>
           <ol style={{ margin: 0, paddingLeft: '1.25rem', color: '#1a6b5c', fontSize: '0.9rem', lineHeight: 2 }}>
-            {[
-              '묵주기도란 무엇인가',
-              '묵주기도의 역사',
-              '묵주의 구조 — 59개 구슬',
-              '요일별 신비 배정',
-              '묵주기도 바치는 순서',
-              '기도문 전문',
-              '4가지 신비 상세 해설',
-              '묵주기도의 신학적 깊이',
-              '성인들의 묵주기도 증언',
-              '묵주기도의 은혜와 약속',
-              '초보자를 위한 팁',
-              '자주 묻는 질문 (FAQ)',
-            ].map((t, i) => (
-              <li key={i}>{t}</li>
+            {([
+              ['what',      '묵주기도란 무엇인가'],
+              ['history',   '묵주기도의 역사'],
+              ['structure', '묵주의 구조 — 59개 구슬'],
+              ['weekday',   '요일별 신비 배정'],
+              ['order',     '묵주기도 바치는 순서'],
+              ['prayers',   '기도문 전문'],
+              ['mysteries', '4가지 신비 상세 해설'],
+              ['theology',  '묵주기도의 신학적 깊이'],
+              ['saints',    '성인들의 묵주기도 증언'],
+              ['promises',  '묵주기도의 은혜와 약속'],
+              ['tips',      '초보자를 위한 팁'],
+              ['faq',       '자주 묻는 질문 (FAQ)'],
+            ] as [string, string][]).map(([id, label]) => (
+              <li key={id}>
+                <a href={`#${id}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                  {label}
+                </a>
+              </li>
             ))}
           </ol>
         </nav>

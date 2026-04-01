@@ -31,12 +31,21 @@ html, body {
   touch-action: manipulation;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR',
     'Malgun Gothic', system-ui, sans-serif;
   letter-spacing: -0.02em;
   color: var(--text-primary);
   background: #E8F6F8;
+  /* overflow: hidden 은 앱 루트(.rosary-app-root)에서만 적용 — guide/privacy 페이지 스크롤 보장 */
+}
+
+/* 앱 루트에만 overflow 잠금 */
+.rosary-app-root {
   overflow: hidden;
 }
 
