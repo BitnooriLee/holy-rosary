@@ -2,9 +2,11 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '개인정보처리방침 | 디지털 묵주',
+  title: '개인정보처리방침 | 디지털 묵주 — 천주교 묵주기도 앱',
   description:
-    '디지털 묵주 앱의 개인정보처리방침입니다. Google AdSense 광고 사용, 쿠키 정책, 데이터 수집 내역을 안내합니다.',
+    '디지털 묵주(Digital Rosary KR) 개인정보처리방침. 로컬 저장소 사용 현황, Google AdSense 쿠키 정책, 맞춤 광고 거부 방법, 아동 정보 보호 정책을 안내합니다.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/privacy' },
 }
 
 const LAST_UPDATED = '2026년 3월 31일'

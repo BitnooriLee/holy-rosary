@@ -54,12 +54,13 @@ export interface UseRosaryReturn {
 export function useRosary(): UseRosaryReturn {
   const [step, setStep] = useState(0)
   const [theme, setThemeState] = useState<ThemeId>('tiffany')
-  const [mysteryKey, setMysteryKey] = useState<MysteryKey>(getMysteryKeyForToday())
+  // 초기값은 서버/클라이언트 공통 고정값 — 날짜 계산은 useEffect(클라이언트 전용)에서 처리
+  const [mysteryKey, setMysteryKey] = useState<MysteryKey>('joyful')
   const [celebratingBeads, setCelebratingBeads] = useState<Set<number>>(new Set())
   const [tappingBead, setTappingBead] = useState<number | null>(null)
   const celebrateTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  /* ── 초기 로드 ── */
+  /* ── 초기 로드 (클라이언트 전용) ── */
   useEffect(() => {
     const saved = loadSaved()
     if (saved) {
@@ -67,6 +68,9 @@ export function useRosary(): UseRosaryReturn {
       if (saved.theme) setThemeState(saved.theme)
       if (saved.mysteryKey) setMysteryKey(saved.mysteryKey)
       else setMysteryKey(getMysteryKeyForToday())
+    } else {
+      // localStorage 저장값 없으면 오늘 날짜로 신비 계산
+      setMysteryKey(getMysteryKeyForToday())
     }
   }, [])
 

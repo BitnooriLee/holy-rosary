@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { MYSTERY_SETS, getMysteryKeyForToday } from '@/lib/mysteries'
 
 const DAILY_VERSES = [
@@ -16,9 +16,15 @@ const DAILY_VERSES = [
 export default function LiturgyBanner() {
   const [open, setOpen] = useState(false)
 
-  const mk    = getMysteryKeyForToday()
-  const ms    = MYSTERY_SETS[mk]
-  const verse = DAILY_VERSES[new Date().getDay()]
+  // 날짜 기반 값은 클라이언트에서만 계산 — SSR/CSR 불일치(hydration error) 방지
+  const [ms, setMs]       = useState(MYSTERY_SETS['joyful'])
+  const [verse, setVerse] = useState(DAILY_VERSES[0])
+
+  useEffect(() => {
+    const mk = getMysteryKeyForToday()
+    setMs(MYSTERY_SETS[mk])
+    setVerse(DAILY_VERSES[new Date().getDay()])
+  }, [])
 
   return (
     <div className="liturgy-banner">
