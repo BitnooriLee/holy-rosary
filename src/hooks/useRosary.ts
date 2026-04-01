@@ -114,11 +114,11 @@ export function useRosary(): UseRosaryReturn {
   const advance = useCallback(() => {
     if (step >= TOTAL_STEPS - 1) return
     const nextStep = step + 1
-    haptic(45)
+    haptic([8, 0, 12])   // 짧고 선명한 더블 펄스
 
-    // 탭 애니메이션
+    // 탭 애니메이션 (beadTap 키프레임 280ms에 맞춤)
     setTappingBead(STEP_TO_BEAD[step])
-    setTimeout(() => setTappingBead(null), 320)
+    setTimeout(() => setTappingBead(null), 280)
 
     // 단 완료 체크: step 14=1단끝, 25=2단끝, 36=3단끝, 47=4단끝, 58=5단끝
     const decadeEndToRange: Record<number, number> = { 14: 0, 25: 1, 36: 2, 47: 3, 58: 4 }
@@ -134,7 +134,7 @@ export function useRosary(): UseRosaryReturn {
   /* ── 이전 단계 ── */
   const back = useCallback(() => {
     if (step <= 0) return
-    haptic(30)
+    haptic(15)
     const prevStep = step - 1
     setStep(prevStep)
     persist(prevStep, theme, mysteryKey)

@@ -71,7 +71,9 @@ body {
 
 @keyframes beadTap {
   0%   { transform: scale(1); }
-  45%  { transform: scale(1.38); }
+  28%  { transform: scale(1.45); }
+  55%  { transform: scale(0.93); }
+  75%  { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
 
@@ -96,7 +98,7 @@ body {
   transform-origin: center;
 }
 .animate-bead-tap {
-  animation: beadTap 0.32s ease-out forwards;
+  animation: beadTap 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   transform-box: fill-box;
   transform-origin: center;
 }
@@ -146,13 +148,13 @@ body {
 
 /* ─── 오늘 날짜 / 신비 라벨 ─── */
 .header-date {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--text-muted);
 }
 .header-mystery {
-  font-size: 0.78rem;
+  font-size: 0.86rem;
   font-weight: 600;
   color: var(--accent);
   letter-spacing: -0.01em;
@@ -171,7 +173,7 @@ body {
 }
 .theme-btn {
   flex: 1;
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   padding: 0.38rem 0.3rem;
@@ -257,9 +259,9 @@ body {
   gap: 0.6rem;
 }
 
-/* ─── 타이포그래피 ─── */
+/* ─── 타이포그래피 (+10%) ─── */
 .prayer-subtitle {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -268,7 +270,7 @@ body {
   text-align: center;
 }
 .prayer-title {
-  font-size: 1.25rem;
+  font-size: 1.38rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.55rem;
@@ -278,18 +280,18 @@ body {
 }
 .prayer-text-scroll {
   overflow-y: auto;
-  scrollbar-width: none;       /* 내부 스크롤바 숨김 (outer에서 처리) */
+  scrollbar-width: none;
 }
 .prayer-line {
-  font-size: 0.88rem;
-  line-height: 1.7;
+  font-size: 0.97rem;
+  line-height: 1.75;
   color: var(--text-muted);
   white-space: pre-wrap;
   letter-spacing: -0.01em;
   text-align: center;
 }
 .mystery-announce {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--accent);
   margin-bottom: 0.2rem;
@@ -297,23 +299,23 @@ body {
   text-align: center;
 }
 .scripture-line {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-style: italic;
   color: var(--text-primary);
   opacity: 0.82;
   margin-bottom: 0.5rem;
-  line-height: 1.6;
+  line-height: 1.65;
   text-align: center;
 }
 .divider-line {
   color: var(--panel-border);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   text-align: center;
   margin: 0.35rem 0;
 }
 .step-counter {
   text-align: center;
-  font-size: 0.6rem;
+  font-size: 0.66rem;
   color: var(--text-muted);
   letter-spacing: 0.08em;
   margin: 0;
@@ -329,7 +331,7 @@ body {
   height: 2.9rem;
   padding: 0 1.1rem;
   border-radius: 9999px;
-  font-size: 0.84rem;
+  font-size: 0.92rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   cursor: pointer;
@@ -349,7 +351,7 @@ body {
   flex: 1;
   height: 2.9rem;
   border-radius: 9999px;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   cursor: pointer;
