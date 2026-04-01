@@ -118,25 +118,29 @@ function RosaryApp() {
         </div>
       </div>
 
-      {/* ── ④ 미니 푸터 네비게이션 ── */}
+      {/* ── ④ 앱 푸터 ── */}
       <footer
-        className="shrink-0 flex items-center justify-center gap-5 text-center"
+        className="shrink-0 flex flex-col items-center justify-center text-center"
         style={{
-          height: 'calc(env(safe-area-inset-bottom, 0px) + 2.4rem)',
-          paddingBottom: 'env(safe-area-inset-bottom, 0px)',
+          paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 0.5rem)',
+          paddingTop: '0.35rem',
           color: 'var(--text-muted)',
-          fontSize: '0.7rem',
           letterSpacing: '-0.01em',
-          opacity: 0.7,
+          opacity: 0.75,
         }}
       >
-        <Link href="/guide" style={{ color: 'inherit', textDecoration: 'none' }}>
-          묵주기도 바치는 법
-        </Link>
-        <span aria-hidden>·</span>
-        <Link href="/privacy" style={{ color: 'inherit', textDecoration: 'none' }}>
-          개인정보처리방침
-        </Link>
+        <nav aria-label="하단 메뉴" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.72rem' }}>
+          <Link href="/guide" style={{ color: 'inherit', textDecoration: 'none', padding: '0.25rem 0.4rem' }}>
+            묵주기도 바치는 법
+          </Link>
+          <span aria-hidden style={{ opacity: 0.4 }}>|</span>
+          <Link href="/privacy" style={{ color: 'inherit', textDecoration: 'none', padding: '0.25rem 0.4rem' }}>
+            개인정보처리방침
+          </Link>
+        </nav>
+        <p style={{ fontSize: '0.62rem', opacity: 0.5, margin: 0 }}>
+          © 2026 은총이 가득히 · Digital Rosary KR
+        </p>
       </footer>
 
       {/* ── 완료 오버레이 ── */}
@@ -324,10 +328,18 @@ function RosaryGuideSection() {
           기도 진행 상태는 자동 저장되어 언제든 이어서 바칠 수 있습니다.
         </div>
 
-        <p style={{ textAlign: 'center', marginTop: '2.5rem', fontSize: '0.78rem', color: '#aaa' }}>
-          <Link href="/guide" style={{ color: 'inherit', textDecoration: 'underline', marginRight: '1rem' }}>묵주기도 바치는 법 (전체 가이드)</Link>
-          <Link href="/privacy" style={{ color: 'inherit', textDecoration: 'underline' }}>개인정보처리방침</Link>
-        </p>
+        <footer style={{ textAlign: 'center', marginTop: '2.5rem', borderTop: '1px solid rgba(0,0,0,0.08)', paddingTop: '1.5rem' }}>
+          <nav style={{ display: 'flex', justifyContent: 'center', gap: '1rem', fontSize: '0.82rem', marginBottom: '0.5rem' }}>
+            <Link href="/guide" style={{ color: '#1a6b5c', textDecoration: 'none' }}>묵주기도 바치는 법</Link>
+            <span style={{ color: '#ccc' }}>|</span>
+            <Link href="/privacy" style={{ color: '#1a6b5c', textDecoration: 'none' }}>개인정보처리방침</Link>
+            <span style={{ color: '#ccc' }}>|</span>
+            <Link href="/" style={{ color: '#1a6b5c', textDecoration: 'none' }}>묵주기도 앱</Link>
+          </nav>
+          <p style={{ fontSize: '0.72rem', color: '#bbb', margin: 0 }}>
+            © 2026 은총이 가득히 · Digital Rosary KR · All rights reserved.
+          </p>
+        </footer>
       </div>
     </section>
   )

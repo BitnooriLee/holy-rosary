@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 메인 앱 페이지 -->
+  <url>
+    <loc>https://holy-rosary.vercel.app/</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://holy-rosary.vercel.app/"/>
+  </url>
+
+  <!-- 묵주기도 바치는 법 가이드 -->
+  <url>
+    <loc>https://holy-rosary.vercel.app/guide/</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://holy-rosary.vercel.app/guide/"/>
+  </url>
+
+  <!-- 개인정보처리방침 -->
+  <url>
+    <loc>https://holy-rosary.vercel.app/privacy/</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://holy-rosary.vercel.app/privacy/"/>
+  </url>
+
+</urlset>

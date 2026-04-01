@@ -44,6 +44,33 @@ body {
   /* overflow: hidden 은 앱 루트(.rosary-app-root)에서만 적용 — guide/privacy 페이지 스크롤 보장 */
 }
 
+/* ── 전역 터치 최적화 (모바일 클릭 미스 방지) ── */
+button, a, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* 텍스트 드래그·블록 지정 방지 — 버튼·인터랙티브 요소 */
+button,
+.bead-hit,
+.btn-next,
+.btn-prev,
+.btn-restart,
+.theme-btn,
+.liturgy-toggle {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* SVG 터치 영역 — 구슬 클릭 미스 방지 */
+svg {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+
 /* 앱 루트에만 overflow 잠금 */
 .rosary-app-root {
   overflow: hidden;
