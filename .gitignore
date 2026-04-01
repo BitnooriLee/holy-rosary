@@ -5,3 +5,5 @@ out/
 build/
 .DS_Store
 .env*.local
+
+.CLAUDE.md
