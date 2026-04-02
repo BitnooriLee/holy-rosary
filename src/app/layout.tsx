@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -83,6 +84,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>{children}</body>
+
+      {/* Google AdSense — afterInteractive: 핵심 UI 로드 후 실행 */}
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8611023796152099"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
     </html>
   )
 }
